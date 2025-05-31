@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css?family=MS%20Reference%20Sans%20Serif:700|Inter:400');
+
+/* colors */
+:root[data-theme="light"] {
+  --text: #0d0f12;
+  --background: #eef0f2;
+  --primary: #1b4079;
+  --secondary: #709fe6;
+  --accent: #185dc3;
+}
+:root[data-theme="dark"] {
+  --text: #edeff2;
+  --background: #0d0f11;
+  --primary: #86ace4;
+  --secondary: #19488f;
+  --accent: #3c80e7;
+}
+
+/* font sizes */
+:root {
+  --default: 100%; /* 16px */
+
+  --h1: 4.210rem; /* 67.36px */
+  --h2: 3.158rem; /* 50.56px */
+  --h3: 2.369rem; /* 37.92px */
+  --h4: 1.777rem; /* 28.48px */
+  --h5: 1.333rem; /* 21.28px */
+
+  --small: 0.750rem; /* 12px */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+html {
+  color: var(--text);
+  background-color: var(--background);
+  font-size: var(--default);
+  line-height: 1.75;
+}
+
+/*
+ * Typography
+ */
+
+body {
+  font-family: 'Inter', serif;
+  font-weight: 400;
+
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'MS Reference Sans Serif', serif;
+  font-weight: 700;
+}
+
+h1 {font-size: var(--h1);}
+h2 {font-size: var(--h2);}
+h3 {font-size: var(--h3);}
+h4 {font-size: var(--h4);}
+h5 {font-size: var(--h5);}
+
+small {font-size: var(--small);}
+
+
+/*
+ * change highlight color to match style
+ */
+::-moz-selection {
+  background: var(--secondary);
+  text-shadow: none;
+}
+::selection {
+  background: var(--secondary);;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--text);
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide visually and from screen readers
+ */
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: var(--background) !important;
+    color: var(--text) !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+
+/* ==========================================================================
+   Stuff
+   ========================================================================== */
+
+#canvas {
+  display: block;
+  background-color: black/*var(--background)*/;
+}
+
+#controls {
+  margin: 0 auto;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+
+.toolbar {
+  background-color: black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  fill-opacity: 0.5;
+  display: flex;
+}
+
+.buttons {
+  border: none;
+  background-color: var(--background);
+  color: var(--text);
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 10%;
+  height: 70px;
+  width: 100px;
+}
+
+#start-stop {
+  margin-right: 10px;
+}
+
+#clear {
+  margin-left: 10px;
+}
+
+#redo {
+  margin-left: 10px;
+}
+
+#speed-slider {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}

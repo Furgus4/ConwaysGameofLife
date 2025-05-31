@@ -1,0 +1,29 @@
+<!doctype html>
+<html class="no-js" lang="" data-theme="dark">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conway's Game of Life</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <div id="controls">
+    <div class="toolbar">
+      <button class="buttons" id="start-stop">Start</button>
+      <button class="buttons" id="undo">Undo</button>
+      <button class="buttons" id="redo">Redo</button>
+      <button class="buttons" id="clear">Clear</button>
+      <div id="speed-slider">
+        <label for="speed">Speed</label>
+        <input type="range" id="speed" min="1" max="50" value="10">
+      </div>
+    </div>
+  </div>
+  <script src="js/app.js" type="module"></script>
+</body>
+
+</html>

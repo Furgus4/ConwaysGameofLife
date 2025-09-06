@@ -1,3 +1,6 @@
 # Conway's Game of Life
 
-I haven't taken the time to implement tap and swipe functionality so it only works with a mouse right now.
+TODO:
+- Implement tap and swipe functionality.
+- Test on mobile.
+- Prevent browser shortcuts that interfere with movement such as hold right click and swipe down

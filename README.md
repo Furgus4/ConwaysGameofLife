@@ -1,6 +1,6 @@
 # Conway's Game of Life
 
 TODO:
-- Implement tap and swipe functionality.
-- Test on mobile.
-- Prevent browser shortcuts that interfere with movement such as hold right click and swipe down
+- Prevent browser shortcuts and gesture mapping that interfere with navigation controls
+- Implement tap and swipe functionality
+- Test on mobile
